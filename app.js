@@ -2,6 +2,8 @@ import mongoose from "mongoose";
 import express from "express"
 import dotenv from "dotenv"
 import signupData from "./routes.js"
+import serverless from "serverless-http";
+import router from "./routes.js";
 const app = express()
 
 dotenv.config()
@@ -22,4 +24,6 @@ app.listen("10000",(err) => {
    if(err) return  err
    console.log("Server is running on 10000");
 })
+app.use("./netlify/functions/api",router)
+export default serverless(app);
 // v18.17.1
