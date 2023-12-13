@@ -18,10 +18,9 @@ export const Signup = async(req,res) => {
 
 export const getUser = async(req,res) => {
     try{
+        console.log("hyhyhyhyh");
          const userData = await UserModel.find({})
-         return res.status(200).json(userData,{
-           message:"user get successfully!"
-         })
+         return res.status(200).json(userData)
     }catch(e){
        console.log(e);
     }
