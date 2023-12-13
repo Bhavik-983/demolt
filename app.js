@@ -6,7 +6,7 @@ const app = express()
 
 dotenv.config()
 mongoose
-  .connect("mongodb://127.0.0.1:27017/DEMO2")
+  .connect("mongodb://localhost:27017/DEMO2")
   .then(() => {
     console.log("Db connection successfully.");
   })
